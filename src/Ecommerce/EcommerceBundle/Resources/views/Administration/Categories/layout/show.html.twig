@@ -1,0 +1,39 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body -%}
+    <h1>Categories</h1>
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ entity.nom }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    <div>
+
+
+        <a href="{{ path('adminCategories') }}" class="btn btn-info btn-xs" > Retour
+
+        </a>
+
+
+        <a href="{{ path('adminCategories_edit', { 'id': entity.id }) }}" class="btn btn-danger btn-xs">
+            Modifier
+        </a>
+
+        <a href="{{ asset(form(delete_form)) }}" class="btn btn-danger btn-xs">
+            Supprimer
+        </a>
+
+        {#{{ form(delete_form) }}#}
+    </div>
+
+{% endblock %}
